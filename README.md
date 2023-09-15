@@ -2,4 +2,4 @@
 
 ### Infrastructure
 
-![image](https://github.com/falco2202/three-tier/images/three-tier.png)
+![image](https://github.com/falco2202/three-tier-iac/blob/master/images/three-tier.png)

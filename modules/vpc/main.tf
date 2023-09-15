@@ -73,7 +73,7 @@ resource "aws_security_group" "public_sg" {
 
 # NAT gateway
 resource "aws_eip" "nat_eip" {
-  vpc = true
+  domain = "vpc"
 
   tags = {
     Name = "${var.app_name}-nat-eip"

@@ -43,7 +43,7 @@ resource "aws_route_table_association" "public_subnets" {
   route_table_id = aws_route_table.public_rtb.id
 }
 
-resource "aws_security_group" "three_tier_sg" {
+resource "aws_security_group" "public_sg" {
   name        = "${var.app_name}-public-sg"
   description = "Security group for ${var.app_name} application"
 
@@ -56,7 +56,7 @@ resource "aws_security_group" "three_tier_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  ingress = {
+  ingress {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
@@ -132,7 +132,7 @@ resource "aws_security_group" "private_sg" {
     self      = true
   }
 
-  egress = {
+  egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
